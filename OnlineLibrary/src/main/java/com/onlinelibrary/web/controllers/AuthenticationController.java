@@ -28,23 +28,6 @@ public class AuthenticationController extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.removeAttribute("currentSessionUser");
 		session.removeAttribute("favoritesList");
-		/*Cookie[] requestCookies = request.getCookies();
-		Cookie authenticationCookie = null;
-		if (requestCookies != null) {
-			String authenticationCookieName = session.getServletContext().getInitParameter("AuthenticationCookieName");
-			for (Cookie c : requestCookies) {
-				if (c.getName().equals(authenticationCookieName)) {
-					authenticationCookie = c;
-					break;
-				}
-			}
-		}
-		if(authenticationCookie != null) {
-			authenticationCookie.setValue("");
-			authenticationCookie.setPath("/");
-			authenticationCookie.setMaxAge(0);
-			response.addCookie(authenticationCookie);
-		}*/
 		response.sendRedirect("Books");
 	}
 	
